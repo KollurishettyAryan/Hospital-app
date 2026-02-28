@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hospital-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/KollurishettyAryan/Hospital-app
+    path: hospital-app
+    targetRevision: master
+    helm:
+      valueFiles:
+        - values.yaml
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: hospital-ns
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
