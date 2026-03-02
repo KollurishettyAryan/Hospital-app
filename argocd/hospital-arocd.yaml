@@ -8,7 +8,7 @@ spec:
 
   source:
     repoURL: https://github.com/KollurishettyAryan/Hospital-app
-    path: hospital-app
+    path: charts/hospital-app
     targetRevision: main
     helm:
       valueFiles:
