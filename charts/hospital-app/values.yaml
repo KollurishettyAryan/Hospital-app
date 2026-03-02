@@ -1,18 +1,16 @@
-replicaCount: 2
+replicas: 2
+
+appDeployment:
+  labels:
+    app: hospital
+  name: hospital-container
 
 image:
   repository: aryankollurishetty/hospital-app
   tag: v1.0.0
-  pullPolicy: IfNotPresent
 
-service:
-  type: NodePort
-  port: 80
-  targetPort: 80
-  nodePort: 30080
+port: 80
 
-labels:
+appService:
   app: hospital
-
-container:
-  name: hospital-container
+  type: NodePort
