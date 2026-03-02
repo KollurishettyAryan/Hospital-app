@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/KollurishettyAryan/Hospital-app
     path: hospital-app
-    targetRevision: master
+    targetRevision: main
     helm:
       valueFiles:
         - values.yaml
